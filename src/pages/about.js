@@ -19,7 +19,7 @@ export const ABOUT = () => {
                 <div class='box'>
                     <h1>About</h1>
                     <p> 
-                        I am an 18-year-old programmer based in Brandenburg, Germany with an interest in computer science and low-level game design. Looking ahead, I aim to transition into quantitative trading environments for software development.
+                        I am an 18-year-old programmer based in Brandenburg, Germany with an interest in computer science and low-level game design. Looking ahead, I aim to transition into software development.
                     </p>
                 </div>
                 <div class='box'>
