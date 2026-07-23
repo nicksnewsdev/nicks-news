@@ -25,7 +25,7 @@ export const ABOUT = () => {
                 <div class='box'>
                     <h1>Technologies</h1>
                     <p>
-                        I have experience with a variety of programming languages. However, I am currently aiming to improve my programming expertise by learning C++. I do not support excessive use of artificial intelligence for programming.
+                        I have experience with a variety of programming languages like Lua, Python and Typescript. However, I am currently aiming to improve my programming expertise by learning C++ and Rust. I do not support excessive use of artificial intelligence for programming.
                     </p>
                 </div>
             </div>
