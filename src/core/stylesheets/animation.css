@@ -1,0 +1,9 @@
+:root {
+	/* Ease timeframes */
+	--ease-time-1: 0.8s;
+	--ease-time-2: 1.4s;
+
+	/* Ease types */
+	--ease-bounce: cubic-bezier(0, 1, 0.5, 1);
+	--ease-default: ease;
+}

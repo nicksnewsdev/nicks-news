@@ -1,0 +1,56 @@
+:root {
+    /* Spacings for gap, margin, padding, etc. */
+        --space-1: 2px;
+        --space-2: 4px;
+        --space-3: 6px;
+        --space-4: 8px;
+        --space-5: 16px;
+
+    /* Border-radius */
+        --radius-1: 6px;
+        --radius-full: 999px;
+
+    /* Opacity */
+        --opacity-1: 0.25;
+        --opacity-2: 0.5;
+
+    /* Font-size */
+        --font-size-1: 14px;
+        --font-size-2: 24px;
+        --font-size-3: 42px;
+        --font-size-full: clamp(48px, 12vw, 120px);
+
+    /* Icon sizes */
+        --icon-1: 16px;
+
+    /* Scale */
+        --scale-1: 0.95;
+        --scale-2: 1.05;
+
+    /* Font-weight */ 
+        --font-weight-1: 200;
+        --font-weight-2: 400;
+
+}
+
+@media (max-width: 600px) {
+	:root {
+		--font-size-full: clamp(48px, 20vw, 400px);
+	}
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.center {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}

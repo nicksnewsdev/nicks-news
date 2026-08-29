@@ -1,0 +1,75 @@
+/* Import all global stylesheets */
+@import "$core/stylesheets/styles.css";
+@import "$core/stylesheets/animation.css";
+@import "$core/stylesheets/colors.css";
+
+/* Import global fonts */
+@import url("https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=array@400,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+
+:root {
+  --font-main: "Clash Display", sans-serif;
+  --font-dotted: "Array", sans-serif;
+  --font-code: "Fira Code", monospace;
+}
+
+#app {
+	width: 100%;
+	min-height: 100%;
+}
+
+/* Ensure the app hugs the edges of the application with no padding or margin */
+html,
+body {
+	width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* All elements use border-box */
+/* The font is also globally applied here */
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+    background: var(--color-background);
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    text-decoration: none;
+}
+
+/* Ensure links, clickable look like normal spans */
+a {
+    color: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    text-decoration: none;
+}
+
+/* Scrollbar */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-text) transparent;
+}
+
+*::-webkit-scrollbar {
+	width: var(--space-2);
+	height: var(--space-2);
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: var(--color-text);
+	border-radius: var(--radius-full);
+}
