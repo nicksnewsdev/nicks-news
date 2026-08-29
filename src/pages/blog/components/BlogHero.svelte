@@ -17,7 +17,7 @@
 <div class={`col blog-hero ${className}`}>
 	<h1 class="blog-title">{title}</h1>
 
-	<p class="blog-text">
+	<p class="blog-content">
 		{@render content()}
 	</p>
 
@@ -44,7 +44,7 @@
 	}
 
 	/* Use color mix for opacity instead so that spans can use full opacity */
-	.blog-text {
+	.blog-content {
 		max-width: 80%;
 		margin: calc(var(--space-2) * -1) 0 0 0;
 		color: color-mix(in srgb, var(--color-text) 25%, transparent);
@@ -53,7 +53,7 @@
 	}
 
 	/* Spans are highlighted, used for keywords */
-	.blog-text :global(span) {
+	.blog-content :global(span) {
 		color: var(--color-text);
 		font-weight: var(--font-weight-2);
 	}

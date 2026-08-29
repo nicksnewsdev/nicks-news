@@ -15,7 +15,9 @@
 
 	onMount(async () => {
 		// Fetch the current viewed blog with url
-		const response = await fetch(`/api/blogs/current?path=${encodeURIComponent(window.location.pathname)}`);
+		const response = await fetch(
+            `/api/blogs/current?path=${encodeURIComponent(window.location.pathname)}`
+        );
 
 		if (!response.ok) {
 			return;

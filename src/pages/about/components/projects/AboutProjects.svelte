@@ -54,6 +54,7 @@
 
 	onMount(async () => {
 		const response = await fetch(
+			// Fetch my projects from github
 			"https://api.github.com/users/nicksnewsdev/repos?sort=updated&direction=desc&per_page=12"
 		);
 
@@ -65,14 +66,16 @@
 
 		projects = repos
 			.filter((repo) => !repo.fork && !repo.archived)
-			.map(toProject);
+			.map(toProject)
+			// Reverse the list so the latest one is always on the left
+			.reverse();
 	});
 </script>
 
 <div class="col projects">
 	<h1 class="row projects-title">
 		<span>My</span>
-		<span class="title-main">Projects</span>
+		<span class="title">Projects</span>
 		<span class="projects-count">({projects.length})</span>
 	</h1>
 
@@ -101,7 +104,7 @@
 		align-items: baseline;
 	}
 
-	.title-main {
+	.title {
 		position: relative;
 		color: var(--color-text);
 		font-family: var(--font-dotted);
@@ -111,7 +114,7 @@
 	}
 
 	/* On hover, show an animated pink highlight */
-	.title-main::after {
+	.title::after {
 		content: "";
 		position: absolute;
 		left: 0;
@@ -125,14 +128,13 @@
 		z-index: -1;
 	}
 
-	/* Scale the highlight all the way */
-	.projects-title:hover .title-main::after {
+	.projects:hover .title::after {
 		transform: scaleX(1);
 		transform-origin: left;
 	}
 
 	/* Description has a lower opacity */
-	.projects-title span:not(.title-main) {
+	.projects-title span:not(.title) {
 		color: var(--color-text);
 		font-family: var(--font-main);
 		font-size: var(--font-size-2);
@@ -158,7 +160,7 @@
 		display: none;
 	}
 
-	.projects-list :global(.github-project) {
+	.projects-list :global(.project-card) {
 		flex: 0 0 260px;
 		direction: ltr;
 	}

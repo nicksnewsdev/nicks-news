@@ -6,7 +6,7 @@
 	<h1 class="blog-title">Blog</h1>
 
 	<p class="blog-text">
-		If you are interested in <span>UI/UX design</span>, you can read some of my blogs about my <span>design philosophy</span> and much more.
+		If you are interested in <span>UI/UX design</span>, you can read some of my blogs. I post about my <span>design philosphy</span> and other <span>things of intrest</span>.
 	</p>
 
 	<BlogsLatest amount={5} />

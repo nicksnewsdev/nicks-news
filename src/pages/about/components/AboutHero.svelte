@@ -60,7 +60,7 @@
 		{/key}
 	</h1>
 
-	<p class="hero-text">
+	<p class="hero-content">
 		I am Nick, a <span>programmer</span> and <span>UI/UX designer</span> from Brandenburg, Germany. I aim to create <span>minimalist</span> interfaces and applications that <span>serve their purpose</span>.
 	</p>
 </section>
@@ -85,7 +85,7 @@
 	}
 
     /* Use color mix for opacity instead so that spans can use full opacity */
-    .hero-text {
+    .hero-content {
         max-width: 80%;
         margin: 0;
         color: color-mix(in srgb, var(--color-text) 25%, transparent);
@@ -94,7 +94,7 @@
     }
 
     /* Spans are highlighted, used for keywords */
-    .hero-text span {
+    .hero-content span {
         color: var(--color-text);
         font-weight: var(--font-weight-2);
     }

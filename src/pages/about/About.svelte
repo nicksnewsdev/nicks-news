@@ -58,11 +58,11 @@
 	}
 
 	.cursor-path-3 {
-		animation: cursor-3-x 13s ease-in-out 1.4s infinite alternate-reverse;
+		animation: cursor-3-x 13s ease-in-out infinite alternate;
 	}
 
 	.cursor-path-3 :global(.cursor) {
-		animation: cursor-3-y 6s ease-in-out infinite alternate;
+		animation: cursor-3-y 6s ease-in-out 1.4s infinite alternate;
 	}
 
 	@keyframes cursor-1-x {

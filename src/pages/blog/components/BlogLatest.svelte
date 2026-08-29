@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import type { Blog } from "$pages/blog/blog";
+	import type { Blog } from "../../../../functions/api/blogs/blogs";
     import { slug } from "$core/slug";
 	import BlogCard from "$pages/blog/components/BlogCard.svelte";
 
@@ -29,7 +29,7 @@
 <div class={`col blogs-latest ${className}`}>
 	<h1 class="row blogs-title">
 		<span>Latest</span>
-		<span class="title-main">Blogs</span>
+		<span class="title">Blogs</span>
 		<span class="blogs-count">({blogs.length})</span>
 	</h1>
 
@@ -60,7 +60,7 @@
 		align-items: baseline;
 	}
 
-	.title-main {
+	.title {
 		position: relative;
 		color: var(--color-text);
 		font-family: var(--font-dotted);
@@ -69,8 +69,28 @@
 		z-index: 1;
 	}
 
+	/* On hover, show an animated orange highlight */
+	.title::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: var(--space-2);
+		width: 100%;
+		height: var(--space-5);
+		background: #FF9E42;
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform var(--ease-time-1) var(--ease-bounce);
+		z-index: -1;
+	}
+
+	.blogs:hover .title::after {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+
 	/* Description has a lower opacity */
-	.blogs-title span:not(.title-main) {
+	.blogs-title span:not(.title) {
 		color: var(--color-text);
 		font-family: var(--font-main);
 		font-size: var(--font-size-2);

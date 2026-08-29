@@ -11,17 +11,15 @@ export type Blog = {
 };
 
 // Get the blog Id from a URL
-export function getBlogIdFromUrl(input: string): number | null {
-	const url = new URL(input);
-
-	// Use the second segment, wich stores the id
-	const segments = url.pathname
+// Get the blog Id from a URL path
+export function getBlogIdFromUrl(path: string): number | null {
+	const segments = path
 		.split("/")
 		.filter(Boolean);
 
 	const id = Number(segments[1]);
 
-	return Number.isNaN(id) ? null : id;
+	return Number.isInteger(id) && id > 0 ? id : null;
 }
 
 // Get content of a blog by Id

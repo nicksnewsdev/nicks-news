@@ -79,7 +79,7 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: var(--space-5);
-		margin-top: var(--space-5);
+		margin-top: var(--space-3);
 	}
 
 	.tags {

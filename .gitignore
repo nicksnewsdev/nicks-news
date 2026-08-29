@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vite/
+.svelte-kit/
+.wrangler/
+.dev.vars
+.env
+.env.*
+npm-debug.log*

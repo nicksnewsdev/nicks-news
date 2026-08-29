@@ -12,7 +12,7 @@
 
 <div class="col experiences">
 	<h1 class="row experiences-title">
-		<span class="title-main">Experience</span>
+		<span class="title">Experience</span>
 		<span>Overview</span>
 	</h1>
 
@@ -36,7 +36,7 @@
 		align-items: baseline;
 	}
 
-	.title-main {
+	.title {
 		position: relative;
 		color: var(--color-text);
 		font-family: var(--font-dotted);
@@ -46,7 +46,7 @@
 	}
 
 	/* On hover, show an animated green highlight */
-	.title-main::after {
+	.title::after {
 		content: "";
 		position: absolute;
 		left: 0;
@@ -60,13 +60,12 @@
 		z-index: -1;
 	}
 
-	/* Scale the highlight all the way */
-	.experiences-title:hover .title-main::after {
+	.experiences:hover .title::after {
 		transform: scaleX(1);
 		transform-origin: left;
 	}
 
-	.experiences-title span:not(.title-main) {
+	.experiences-title span:not(.title) {
 		color: var(--color-text);
 		font-family: var(--font-main);
 		font-size: var(--font-size-2);
