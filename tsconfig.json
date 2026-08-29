@@ -19,13 +19,14 @@
 		"paths": {
 			"$core/*": ["./src/core/*"],
 			"$pages/*": ["./src/pages/*"],
-			"$api/*": ["./functions/api/*"],
+			"$api/*": ["./functions/api/*"]
 		}
 	},
 	"include": [
 		"src/**/*.ts",
 		"src/**/*.svelte",
 		"functions/**/*.ts",
+		"workers/**/*.ts",
 		"vite.config.ts"
 	]
 }
