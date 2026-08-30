@@ -63,7 +63,7 @@
 		transform: translateY(-2px);
 	}
 
-	/* Current project, nicks-news, is highlighted with edit */
+	/* Current project, nicks-news, is highlighted with edit visual */
 	.current-project {
 		border-color: #3DADFF;
 		border-radius: 0;

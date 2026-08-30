@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import BlogHero from "$pages/blog/components/BlogHero.svelte";
-	import BlogMarkdown from "$pages/blog/components/BlogMarkdown.svelte";
+	import Markdown from "$core/components/Markdown.svelte";
 	import type { Blog } from "$api/blogs/blogs";
 
 	let {
@@ -35,7 +35,7 @@
             content={blog.description}
 		></BlogHero>
 
-		<BlogMarkdown content={blog.content} />
+		<Markdown content={blog.content} />
 	{/if}
 </div>
 

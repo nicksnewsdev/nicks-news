@@ -1,5 +1,25 @@
 /* Define global theme colors */
 :root {
-  --color-background: #121314;
-  --color-text: #fffef4;
+	--color-background: #121314;
+	--color-text: #fffef4;
+  --color-text-muted: color-mix(in srgb, var(--color-text) 25%, transparent);
+
+	/* Figma collaboration colors */
+	--color-figma-blue: #3DADFF;
+	--color-figma-green: #66D575;
+	--color-figma-pink: #F849C1;
+	--color-figma-orange: #FF9E42;
+	--color-figma-violet: #874FFF;
+	--color-figma-red: #FF7556;
+	--color-figma-yellow: #FFC943;
+	--color-figma-teal: #5AD8CC;
+}
+
+:root[data-theme="light"] {
+	--color-background: #fffef4;
+	--color-text: #121314;
+
+  /* Ensure opacity text is more readible on light background */
+	--opacity-1: 0.5;
+  --color-text-muted: color-mix(in srgb, var(--color-text) 50%, transparent);
 }

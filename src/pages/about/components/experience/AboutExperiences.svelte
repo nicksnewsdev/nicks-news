@@ -53,7 +53,7 @@
 		bottom: var(--space-2);
 		width: 100%;
 		height: var(--space-5);
-		background: #66D575;
+		background: var(--color-figma-green);
 		transform: scaleX(0);
 		transform-origin: right;
 		transition: transform var(--ease-time-1) var(--ease-bounce);

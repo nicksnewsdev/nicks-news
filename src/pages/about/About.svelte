@@ -7,15 +7,15 @@
 
 <div class="col col-1">
 	<div class="cursor-path cursor-path-1">
-		<Cursor content="Nick" color="#3DADFF" x="52%" y="12%" />
+		<Cursor content="Nick" color="var(--color-figma-blue)" x="52%" y="12%" />
 	</div>
 
 	<div class="cursor-path cursor-path-2">
-		<Cursor content="Kate" color="#66D575" x="11%" y="80%" />
+		<Cursor content="Kate" color="var(--color-figma-green)" x="11%" y="80%" />
 	</div>
 
 	<div class="cursor-path cursor-path-3">
-		<Cursor content="John" color="#F849C1" x="82%" y="52%" />
+		<Cursor content="John" color="var(--color-figma-pink)" x="82%" y="52%" />
 	</div>
 
 	<AboutHero />

@@ -84,11 +84,10 @@
 		font-weight: inherit;
 	}
 
-    /* Use color mix for opacity instead so that spans can use full opacity */
     .hero-content {
         max-width: 80%;
         margin: 0;
-        color: color-mix(in srgb, var(--color-text) 25%, transparent);
+        color: var(--color-text-muted);
         font-size: var(--font-size-2);
         font-weight: var(--font-weight-1);
     }

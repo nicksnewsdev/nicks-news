@@ -26,6 +26,7 @@ body {
 	min-height: 100%;
 	margin: 0;
 	padding: 0;
+    background: var(--color-background);
 }
 
 /* All elements use border-box */
@@ -38,7 +39,6 @@ body {
 body {
 	display: flex;
 	flex-direction: column;
-    background: var(--color-background);
     color: inherit;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
@@ -72,4 +72,16 @@ a {
 *::-webkit-scrollbar-thumb {
 	background: var(--color-text);
 	border-radius: var(--radius-full);
+}
+
+/* View transitions, in this case used for theme switching */
+::view-transition {
+	background: var(--color-background);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation: none;
+	mix-blend-mode: normal;
+	background: var(--color-background);
 }

@@ -83,11 +83,10 @@
 		white-space: nowrap;
 	}
 
-	/* Use color mix for opacity instead so that spans can use full opacity */
 	.blog-content {
 		max-width: 80%;
 		margin: calc(var(--space-2) * -1) 0 0 0;
-		color: color-mix(in srgb, var(--color-text) 25%, transparent);
+		color: var(--color-text-muted);
 		font-size: var(--font-size-2);
 		font-weight: var(--font-weight-1);
 	}
@@ -107,7 +106,7 @@
 		position: relative;
 		padding: var(--space-2) var(--space-4);
 		color: var(--color-text);
-		border: 1px solid color-mix(in srgb, var(--color-text) 25%, transparent);
+		border: 1px solid var(--color-text-muted);
 		border-radius: var(--radius-1);
 		font-size: var(--font-size-1);
 		font-weight: var(--font-weight-1);

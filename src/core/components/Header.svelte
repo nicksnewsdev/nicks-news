@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Icon from "$core/components/icon/Icon.svelte";
+	import Theme from "./Theme.svelte";
 
 	let {
 		className = ""
@@ -42,6 +43,8 @@
 				{item}
 			</a>
 		{/each}
+
+		<Theme />
 	</div>
 </nav>
 
@@ -49,7 +52,7 @@
 	.header {
 		align-items: center;
 		justify-content: space-between;
-        z-index: 2;
+		z-index: 2;
 		gap: var(--space-5);
 		width: 100%;
 	}
@@ -76,8 +79,9 @@
 	.header-item {
 		color: var(--color-text);
 		opacity: var(--opacity-1);
-		transition: opacity var(--ease-time-1) var(--ease-bounce),
-			        transform var(--ease-time-1) var(--ease-bounce);
+		transition:
+			opacity var(--ease-time-1) var(--ease-bounce),
+			transform var(--ease-time-1) var(--ease-bounce);
 	}
 
 	.header-item {

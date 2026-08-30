@@ -77,7 +77,7 @@
 		bottom: var(--space-2);
 		width: 100%;
 		height: var(--space-5);
-		background: #FF9E42;
+		background: var(--color-figma-orange);
 		transform: scaleX(0);
 		transform-origin: right;
 		transition: transform var(--ease-time-1) var(--ease-bounce);

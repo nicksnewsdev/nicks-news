@@ -1,0 +1,2 @@
+## Where to contact
+For professional work, project questions, or anything related to collaboration, you can reach me at [contact@nicks.news](mailto:contact@nicks.news) or nicksnewsdev on Discord. But you can can also contact me on any of my other socials. Misuse of these will lead to communication cutoffs.

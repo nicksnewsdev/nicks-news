@@ -4,7 +4,7 @@
 
 <div class="col center not-found">
 	<div class="cursor-path cursor-path-1">
-		<Cursor content="Lilly" color="#FF9E42" x="48%" y="52%" className="cursor-1" />
+		<Cursor content="Lilly" color="var(--color-figma-teal)" x="48%" y="52%" className="cursor-1" />
 	</div>
 
 	<h1>404</h1>
