@@ -1,17 +1,16 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import type { Snippet } from "svelte";
 
 	let {
 		id = 0,
 		title = "",
-		content,
+		content = "",
 		tags = [],
 		className = ""
 	}: {
 		id?: number;
 		title?: string;
-		content: Snippet;
+		content?: string;
 		tags?: string[];
 		className?: string;
 	} = $props();
@@ -23,7 +22,7 @@
 			return;
 		}
 
-        // Select a random tag to apply an edit visual
+		// Select a random tag to apply an edit visual
 		currentTag = Math.floor(Math.random() * tags.length);
 	});
 </script>
@@ -31,12 +30,12 @@
 <div class={`col blog-hero ${className}`}>
 	<div class="row row-2">
 		<h1 class="blog-title">{title}</h1>
-		<span class="blog-id">#{id}</span>
+		<span class="blog-id">#{id + 1}</span>
 	</div>
 
 	<p class="blog-content">
-		{@render content()}
-	</p>
+        {@html content}
+    </p>
 
 	<div class="row row-1">
 		{#each tags as tag, index}

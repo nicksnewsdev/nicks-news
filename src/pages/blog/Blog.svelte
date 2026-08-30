@@ -32,11 +32,8 @@
 		<BlogHero
 			title={blog.title}
 			tags={tags}
-		>
-			{#snippet content()}
-				{blog?.description}
-			{/snippet}
-		</BlogHero>
+            content={blog.description}
+		></BlogHero>
 
 		<BlogMarkdown content={blog.content} />
 	{/if}
