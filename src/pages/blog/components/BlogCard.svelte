@@ -14,6 +14,9 @@
 		url: string;
 		className?: string;
 	} = $props();
+
+    // Strip to spans form the description provided from the database
+    const cleanDescription = $derived(description.replace(/<\/?span>/g, ""));
 </script>
 
 <a
@@ -22,7 +25,7 @@
 >
 	<div class="col blog-content">
 		<h2>{title}</h2>
-		<p>{description}</p>
+		<p>{cleanDescription}</p>
 	</div>
 
 	<div class="row row-1">

@@ -84,7 +84,7 @@
 		z-index: -1;
 	}
 
-	.blogs:hover .title::after {
+	.blogs-latest:hover .title::after {
 		transform: scaleX(1);
 		transform-origin: left;
 	}

@@ -1,29 +1,55 @@
 <script lang="ts">
+	import { onMount } from "svelte";
 	import type { Snippet } from "svelte";
 
 	let {
+		id = 0,
 		title = "",
 		content,
 		tags = [],
 		className = ""
 	}: {
+		id?: number;
 		title?: string;
 		content: Snippet;
 		tags?: string[];
 		className?: string;
 	} = $props();
+
+	let currentTag = $state(-1);
+
+	onMount(() => {
+		if (tags.length <= 0) {
+			return;
+		}
+
+        // Select a random tag to apply an edit visual
+		currentTag = Math.floor(Math.random() * tags.length);
+	});
 </script>
 
 <div class={`col blog-hero ${className}`}>
-	<h1 class="blog-title">{title}</h1>
+	<div class="row row-2">
+		<h1 class="blog-title">{title}</h1>
+		<span class="blog-id">#{id}</span>
+	</div>
 
 	<p class="blog-content">
 		{@render content()}
 	</p>
 
-    <div class="row row-1">
-		{#each tags as tag}
-			<span class="tag">{tag}</span>
+	<div class="row row-1">
+		{#each tags as tag, index}
+			<span class={`tag ${index === currentTag ? "current-tag" : ""}`}>
+				{#if index === currentTag}
+					<span class="tag-handle top-left"></span>
+					<span class="tag-handle top-right"></span>
+					<span class="tag-handle bottom-left"></span>
+					<span class="tag-handle bottom-right"></span>
+				{/if}
+
+				{tag}
+			</span>
 		{/each}
 	</div>
 </div>
@@ -31,7 +57,13 @@
 <style>
 	.blog-hero {
 		width: 100%;
-        gap: var(--space-5);
+		gap: var(--space-3);
+	}
+
+	.row-2 {
+		align-items: flex-start;
+		gap: var(--space-4);
+		width: 100%;
 	}
 
 	.blog-title {
@@ -41,6 +73,15 @@
 		font-size: var(--font-size-full);
 		font-weight: var(--font-weight-2);
 		line-height: 1;
+	}
+
+	.blog-id {
+		margin-top: var(--space-5);
+		color: var(--color-text);
+		font-size: var(--font-size-2);
+		font-weight: var(--font-weight-1);
+		opacity: var(--opacity-1);
+		white-space: nowrap;
 	}
 
 	/* Use color mix for opacity instead so that spans can use full opacity */
@@ -64,6 +105,7 @@
 	}
 
 	.tag {
+		position: relative;
 		padding: var(--space-2) var(--space-4);
 		color: var(--color-text);
 		border: 1px solid color-mix(in srgb, var(--color-text) 25%, transparent);
@@ -75,9 +117,48 @@
 			        transform var(--ease-time-1) var(--ease-bounce);
 	}
 
-    /* On hover, highlight the tag */
+	/* On hover, highlight the tag */
 	.tag:hover {
 		border-color: var(--color-text);
 		transform: translateY(-2px);
+	}
+
+	.current-tag {
+		border-color: #3DADFF;
+		border-radius: 0;
+	}
+
+	.tag-handle {
+		position: absolute;
+		width: var(--space-2);
+		height: var(--space-2);
+		background: var(--color-text);
+		border: 1px solid #3DADFF;
+		z-index: 2;
+	}
+
+	/* Position all the handles */
+	.top-left {
+		left: 0;
+		top: 0;
+		transform: translate(calc(var(--space-1) * -1), calc(var(--space-1) * -1));
+	}
+
+	.top-right {
+		right: 0;
+		top: 0;
+		transform: translate(var(--space-1), calc(var(--space-1) * -1));
+	}
+
+	.bottom-left {
+		left: 0;
+		bottom: 0;
+		transform: translate(calc(var(--space-1) * -1), var(--space-1));
+	}
+
+	.bottom-right {
+		right: 0;
+		bottom: 0;
+		transform: translate(var(--space-1), var(--space-1));
 	}
 </style>

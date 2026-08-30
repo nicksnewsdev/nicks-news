@@ -1,7 +1,5 @@
-/* Define theme colors of the website, there will be no light theme */
+/* Define global theme colors */
 :root {
   --color-background: #121314;
-  --color-panel: #1e1e1e;
-  --color-panel-light: #272727;
   --color-text: #fffef4;
 }

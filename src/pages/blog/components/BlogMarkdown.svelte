@@ -39,13 +39,13 @@
 		font-size: var(--font-size-1);
 	}
 
-	.blog-markdown :global(p),
-	.blog-markdown :global(li) {
-		margin: 0;
-		color: color-mix(in srgb, var(--color-text) 50%, transparent);
-		font-size: var(--font-size-1);
-		font-weight: var(--font-weight-1);
-	}
+    .blog-markdown :global(p),
+    .blog-markdown :global(li) {
+        margin: 0;
+        color: color-mix(in srgb, var(--color-text) 25%, transparent);
+        font-size: var(--font-size-1);
+        font-weight: var(--font-weight-1);
+    }
 
 	.blog-markdown :global(strong) {
 		color: var(--color-text);
