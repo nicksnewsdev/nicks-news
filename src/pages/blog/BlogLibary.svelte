@@ -1,11 +1,16 @@
 <script lang="ts">
 	import Cursor from "$core/components/Cursor.svelte";
 	import BlogsLatest from "$pages/blog/components/BlogLatest.svelte";
+	import BlogAll from "$pages/blog/components/BlogAll.svelte";
 </script>
 
 <div class="col blog-library">
 	<div class="cursor-path cursor-path-1">
-		<Cursor content="Aiden" color="var(--color-figma-orange)" x="54%" y="30%" />
+		<Cursor content="Aiden" color="var(--color-figma-orange)" x="54%" y="40%" />
+	</div>
+
+	<div class="cursor-path cursor-path-2">
+		<Cursor content="Maya" color="var(--color-figma-violet)" x="28%" y="75%" />
 	</div>
 
 	<h1 class="blog-title">Blog</h1>
@@ -14,7 +19,9 @@
 		If you are interested in <span>UI/UX design</span>, you can read some of my blogs. I post about my <span>design philosophy</span> and other <span>things of interest</span>.
 	</p>
 
-	<BlogsLatest amount={5} />
+	<BlogsLatest amount={3} />
+
+	<BlogAll />
 </div>
 
 <style>
@@ -49,7 +56,7 @@
 		font-weight: var(--font-weight-2);
 	}
 
-	/* Animate the floating cursor */
+	/* Animate the floating cursors */
 	.cursor-path {
 		position: absolute;
 		inset: 0;
@@ -65,6 +72,14 @@
 		animation: cursor-1-y 7s ease-in-out 0.5s infinite alternate;
 	}
 
+	.cursor-path-2 {
+		animation: cursor-2-x 5s ease-in-out 0.8s infinite alternate;
+	}
+
+	.cursor-path-2 :global(.cursor) {
+		animation: cursor-2-y 8s ease-in-out infinite alternate;
+	}
+
 	@keyframes cursor-1-x {
 		to {
 			transform: translateX(4vw);
@@ -74,6 +89,18 @@
 	@keyframes cursor-1-y {
 		to {
 			transform: translateY(-6vh);
+		}
+	}
+
+	@keyframes cursor-2-x {
+		to {
+			transform: translateX(-3vw);
+		}
+	}
+
+	@keyframes cursor-2-y {
+		to {
+			transform: translateY(5vh);
 		}
 	}
 </style>

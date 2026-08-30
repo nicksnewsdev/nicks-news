@@ -5,7 +5,7 @@
 		{
 			title: "Education",
 			description: "Learning UI/UX for website and application design/development. I am also currently learning Electron/Tauri for desktop development.",
-			date: "2023 - Present"
+			date: "2024 - Present"
 		}
 	];
 </script>

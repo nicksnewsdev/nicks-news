@@ -65,7 +65,7 @@
 
 	/* Current project, nicks-news, is highlighted with edit visual */
 	.current-project {
-		border-color: #3DADFF;
+		border-color: var(--color-figma-blue);
 		border-radius: 0;
 	}
 
@@ -73,8 +73,8 @@
 		position: absolute;
 		width: var(--space-4);
 		height: var(--space-4);
-		background: var(--color-text);
-		border: 1px solid #3DADFF;
+		background: #fffef4;
+		border: 1px solid var(--color-figma-blue);
 		z-index: 2;
 	}
 

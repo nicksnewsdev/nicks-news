@@ -1,36 +1,49 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import type { Blog } from "../../../../functions/api/blogs/blogs";
-    import { slug } from "$core/slug";
+	import { slug } from "$core/slug";
 	import BlogCard from "$pages/blog/components/BlogCard.svelte";
+	import BlogSearch from "$pages/blog/components/BlogSearch.svelte";
 
 	let {
-		amount = 5,
 		className = ""
 	}: {
-		amount?: number;
 		className?: string;
 	} = $props();
 
-	let blogs = $state<Blog[]>([]);
+	// How many articles to be loaded at once
+    // Currently, there is no load more feature, so this just fetches a set amount at once
+	const limit = 10;
 
-	onMount(async () => {
-        // Fetch the latest articles based on amount
-		const response = await fetch(`/api/blogs/latest?amount=${amount}`);
+	let blogs = $state<Blog[]>([]);
+	let search = $state("");
+
+	async function loadBlogs() {
+		// Fetch all articles, or articles matching the current search
+		const response = await fetch(
+			`/api/blogs/search?search=${encodeURIComponent(search)}&limit=${limit}&offset=0`
+		);
 
 		if (!response.ok) {
 			return;
 		}
 
 		blogs = await response.json();
+	}
+
+	onMount(async () => {
+		await loadBlogs();
 	});
 </script>
 
-<div class={`col blogs-latest ${className}`}>
+<div class={`col blogs-all ${className}`}>
 	<h1 class="row blogs-title">
-		<span>Latest</span>
+		<span class="blogs-count">({blogs.length})</span>
 		<span class="title">Blogs</span>
+		<span>Overview</span>
 	</h1>
+
+	<BlogSearch bind:value={search} onSearch={loadBlogs} />
 
 	<div class="col blogs-list">
 		{#each blogs as blog (blog.id)}
@@ -46,16 +59,21 @@
 </div>
 
 <style>
-	.blogs-latest {
+	.blogs-all {
 		width: 100%;
 		gap: var(--space-5);
 	}
 
-	.blogs-title {
+	.row-1 {
 		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-5);
+	}
+
+	.blogs-title {
 		margin: 0;
 		gap: var(--space-4);
-		justify-content: flex-end;
 		align-items: baseline;
 	}
 
@@ -68,7 +86,7 @@
 		z-index: 1;
 	}
 
-	/* On hover, show an animated orange highlight */
+	/* On hover, show an animated violet highlight */
 	.title::after {
 		content: "";
 		position: absolute;
@@ -76,14 +94,14 @@
 		bottom: var(--space-2);
 		width: 100%;
 		height: var(--space-5);
-		background: var(--color-figma-orange);
+		background: var(--color-figma-violet);
 		transform: scaleX(0);
 		transform-origin: right;
 		transition: transform var(--ease-time-1) var(--ease-bounce);
 		z-index: -1;
 	}
 
-	.blogs-latest:hover .title::after {
+	.blogs-all:hover .title::after {
 		transform: scaleX(1);
 		transform-origin: left;
 	}
