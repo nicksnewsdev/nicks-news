@@ -9,9 +9,16 @@
 		onSearch?: () => void;
 	} = $props();
 
+	let searchTimeout: number | undefined;
+
 	function handleInput(event: Event) {
 		value = (event.target as HTMLInputElement).value;
-		onSearch?.();
+
+		window.clearTimeout(searchTimeout);
+
+		searchTimeout = window.setTimeout(() => {
+			onSearch?.();
+		}, 250);
 	}
 </script>
 
